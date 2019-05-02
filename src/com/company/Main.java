@@ -21,18 +21,25 @@ public class Main {
         int money = 1000;
         int target = 1200;
         int bet = 10;
-        while (money > bet) {
+        while (money > bet
+//                && money<target  //option 1
+        ) {
             boolean win = play ( );
             if (win) {
                 money += bet;
                 bet = 10;
-            }
-            if (money >= target) {
-                System.out.println (money);
-                break;
+//            }                              //option 2
+//            if (money >= target) {
+//                System.out.println (money);
+//                break;
             } else {
                 money -= bet;
                 bet *= 2;
+            }
+
+            if (money >= target) {                  //option 3
+                System.out.println (money);
+                break;
             }
             System.out.println (money);
         }
